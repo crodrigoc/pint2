@@ -1,0 +1,34 @@
+<div class="container">
+<p><%= notice %></p>
+
+<br>
+<br>
+<br>
+<div class="col-md-12">
+ <div class="thumbnail">
+
+   <center><p>
+     <strong>Nombre:</strong><br>
+     <%= @pin.name %>
+   </p></center>
+
+<center><p>
+  <strong>Foto:</strong><br>
+  <%= image_tag(@pin.photo, :class => 'img-responsive') %>
+</p></center>
+<br>
+<center><p>
+  <strong>Descripción:</strong><br>
+  <%= @pin.description %>
+</p></center>
+ <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
+<%= link_to 'Edit', edit_pin_path(@pin), :class => 'btn'  %>
+<%= link_to 'Back', pins_path, :class => 'btn'  %>
+<br>
+<br>
+<%= link_to "Más Pins del mismo usuario", pinsof_path(@pin.user.id) %>
+
+ </div></center>
+ </div>
+  </div>
+  </div>
