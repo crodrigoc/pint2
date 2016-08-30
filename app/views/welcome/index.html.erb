@@ -21,6 +21,7 @@
 
        <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
        <center><%= link_to 'Show', pin, :class => 'btn' %></center>
+       <br>
        <center><div><% if user_signed_in? %>
        <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
        <% end %>
