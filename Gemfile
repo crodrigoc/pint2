@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
+#gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
@@ -52,3 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'masonry-rails'
+
+
+group :development, :test do
+  gem 'sqlite3'
+ end
+gem 'pg', group: :production
