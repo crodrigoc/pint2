@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -13,5 +14,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-= require masonry/jquery.masonry
+= require jquery.turbolinks
+
 //= require_tree .
+= require masonry/jquery.masonry
+
+= require masonry/masonry
+= require masonry/masonry.min

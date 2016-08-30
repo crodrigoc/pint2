@@ -10,54 +10,28 @@
 </div>
 
 
-<div class="container">
+<div class="grid" style="margin-left:3%" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+  <% @pins.each do |pin| %>
+    <div class="grid-item">
+<br>
+      <center><%= pin.name %></center>
+      <center><%= image_tag(pin.photo) %></center>
+      <center><%= pin.description %></center>
+      <div class="panel-body"
 
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="page-header">
-      <h3 style="display:inline">3 columnas</h3>
-      <span class="label label-success">New</span>
+       <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
+       <center><%= link_to 'Show', pin, :class => 'btn' %></center>
+       <center><div><% if user_signed_in? %>
+       <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
+       <% end %>
+       <% if user_signed_in? %>
+       <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+       <% end %></div></center>
+     </div></center>
       </div>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia dignissimos dolorum illo, facere, cupiditate nesciunt. Nihil, consequuntur. Fuga nulla necessitatibus ab iste magnam dignissimos neque expedita similique, quos consequuntur!</p>
+
     </div>
 
 
-
-    <div class="col-md-4">
-      <div class="page-header">
-      <h3>4 columnas</h3>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia dignissimos dolorum illo, facere, cupiditate nesciunt. Nihil, consequuntur. Fuga nulla necessitatibus ab iste magnam dignissimos neque expedita similique, quos consequuntur!</p>
-    </div>
-
-
-
-    <div class="col-md-2">
-      <div class="page-header">
-      <h3>2 columnas</h3>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia dignissimos dolorum illo, facere, cupiditate nesciunt. Nihil, consequuntur. Fuga nulla necessitatibus ab iste magnam dignissimos neque expedita similique, quos consequuntur!</p>
-    </div>
-
-    <div class="col-md-3">
-      <div class="page-header">
-      <h3>1 columnas</h3>
-      </div>
-      <a href="">
-      <img src="">
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-      </ul>
-      <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-      </ol>
-    </div>
-  </div>
+<% end %>
 </div>

@@ -1,5 +1,5 @@
-$ ->
-   $('#pins').imagesLoaded ->
-     $('#pins').masonry
-      itemSelector: '.pin'
-      isFitWidth: true 
+$('.grid').masonry({
+  // options...
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
