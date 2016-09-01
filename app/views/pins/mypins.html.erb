@@ -1,34 +1,32 @@
 <div class="container">
-  <div class="row">
-  <br>
-  <h1>Mis Pins</h1>
-  <br>
-  <br>
+<h1>Mis Pins</h1>
+</div>
+<div class="grid" style="margin-left:3%">
+
 
   <% @pins.each do |pin| %>
-   <div class="col-md-3">
-    <div class="thumbnail">
+  <div class="grid-item">
+     <br>
       <center><%= pin.name %></center>
-      <%= image_tag(pin.photo, :class => 'img-responsive') %>
+      <center><%= link_to image_tag(pin.photo), pin %></center>
+     <br>
       <center><%= pin.description %></center>
-      <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
-      <%= link_to 'Show', pin, :class => 'btn' %>
-      <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
-      <% end %>
-      <% if user_signed_in? %>
-      <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
-      <% end %>
-    </div></center>
+      <div class="panel-body"
+
+       <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
+
+
+       <center><div><% if user_signed_in? %>
+       <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
+       <% end %>
+       <% if user_signed_in? %>
+       <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+       <% end %></div></center>
+     </div></center>
+      </div>
+
     </div>
-  </div>
+
+
 <% end %>
-
-
-<br>
-
-<% if user_signed_in? %>
-<%= link_to 'New Pin', new_pin_path, :class => 'btn' %>
-<% end %>
-</div>
 </div>

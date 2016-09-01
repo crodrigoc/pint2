@@ -1,12 +1,15 @@
-  <center><h1>Pins Del Proyecto Tipo Pinterest</h1></center>
+<div class="container">
+  <h1>Todos los Pins</h1>
+</div>
+<div class="grid" style="margin-left:3%">
 
-<div class="grid" style="margin-left:3%" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+
   <% @pins.each do |pin| %>
-    <div class="grid-item">
-<br>
+  <div class="grid-item">
+     <br>
       <center><%= pin.name %></center>
       <center><%= link_to image_tag(pin.photo), pin %></center>
-       <br>
+     <br>
       <center><%= pin.description %></center>
       <div class="panel-body"
 

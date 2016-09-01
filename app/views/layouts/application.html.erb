@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>Pint2</title>
+
     <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
       <%= csrf_meta_tags %>
@@ -17,9 +20,13 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
       </script>
 
-      <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
+    </script type="text/JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.js">
+
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
     <!-- or -->
     <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
+    </script>
 
     </head>
 
@@ -32,3 +39,19 @@
 
     </body>
   </html>
+  <script>
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+
+  $(Window).load(function(){
+
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+  })
+    </script>

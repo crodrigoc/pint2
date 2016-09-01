@@ -10,18 +10,21 @@
 </div>
 
 
-<div class="grid" style="margin-left:3%" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+<div class="grid" style="margin-left:3%">
+
+
   <% @pins.each do |pin| %>
-    <div class="grid-item">
-<br>
+  <div class="grid-item">
+     <br>
       <center><%= pin.name %></center>
-      <center><%= image_tag(pin.photo) %></center>
+      <center><%= link_to image_tag(pin.photo), pin %></center>
+     <br>
       <center><%= pin.description %></center>
       <div class="panel-body"
 
        <center><div class="buttons" style="margin-top:10px; margin-bottom:10px">
-       <center><%= link_to 'Show', pin, :class => 'btn' %></center>
-       <br>
+
+
        <center><div><% if user_signed_in? %>
        <%= link_to 'Edit', edit_pin_path(pin), :class => 'btn' %>
        <% end %>
